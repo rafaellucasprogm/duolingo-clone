@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ClerkLoaded, ClerkLoading, SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +23,7 @@ export default function Home() {
         </h1>
         <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
           <ClerkLoading>
-            <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
+            <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
           </ClerkLoading>
           <ClerkLoaded>
             <SignedOut>
@@ -32,7 +39,7 @@ export default function Home() {
               <SignInButton
                 mode="modal"
                 forceRedirectUrl="/learn"
-                signUpForceRedirectUrl= "/learn"
+                signUpForceRedirectUrl="/learn"
               >
                 <Button size="lg" variant="primaryOutline" className="w-full">
                   I already have a account.
@@ -40,15 +47,13 @@ export default function Home() {
               </SignInButton>
             </SignedOut>
             <SignedIn>
-                <Button size="lg" variant="secondary" className="w-full" asChild>
-                  <Link href="/learn">
-                    Continue to Learning
-                  </Link>
-                </Button>
+              <Button size="lg" variant="secondary" className="w-full" asChild>
+                <Link href="/learn">Continue to Learning</Link>
+              </Button>
             </SignedIn>
           </ClerkLoaded>
         </div>
       </div>
     </div>
-  )
+  );
 }

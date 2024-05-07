@@ -2,7 +2,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-function MainLayout({ children }: Props) {
+const MainLayout = ({ children }: Props) => {
   return (
     <>
       <main className="pl-[256px] h-full">
@@ -10,6 +10,6 @@ function MainLayout({ children }: Props) {
       </main>
     </>
   );
-}
+};
 
 export default MainLayout;
